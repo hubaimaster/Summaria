@@ -18,6 +18,10 @@
 		E5B4EF01226448BE0076D0C4 /* SummariaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF00226448BE0076D0C4 /* SummariaTests.swift */; };
 		E5B4EF0C226448BE0076D0C4 /* SummariaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF0B226448BE0076D0C4 /* SummariaUITests.swift */; };
 		E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1A226449DF0076D0C4 /* Config.swift */; };
+		E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1D226458040076D0C4 /* BaseOCR.swift */; };
+		E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1F226458D70076D0C4 /* SOCR.swift */; };
+		E5B4EF2322645A450076D0C4 /* BaseSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF2222645A450076D0C4 /* BaseSummary.swift */; };
+		E5B4EF2522645A9F0076D0C4 /* RuleBasedSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF2422645A9F0076D0C4 /* RuleBasedSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		E5B4EF0B226448BE0076D0C4 /* SummariaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummariaUITests.swift; sourceTree = "<group>"; };
 		E5B4EF0D226448BE0076D0C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5B4EF1A226449DF0076D0C4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E5B4EF1D226458040076D0C4 /* BaseOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOCR.swift; sourceTree = "<group>"; };
+		E5B4EF1F226458D70076D0C4 /* SOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCR.swift; sourceTree = "<group>"; };
+		E5B4EF2222645A450076D0C4 /* BaseSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSummary.swift; sourceTree = "<group>"; };
+		E5B4EF2422645A9F0076D0C4 /* RuleBasedSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleBasedSummary.swift; sourceTree = "<group>"; };
 		F9FF20DC7B6762591D0309D7 /* Pods-SummariaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +149,8 @@
 			children = (
 				E5B4EF1A226449DF0076D0C4 /* Config.swift */,
 				E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */,
+				E5B4EF2122645A380076D0C4 /* Summary */,
+				E5B4EF1C226457F20076D0C4 /* OCR */,
 				E5B4EF19226449D10076D0C4 /* vc */,
 				E5B4EEEF226448BD0076D0C4 /* Main.storyboard */,
 				E5B4EEF2226448BE0076D0C4 /* Assets.xcassets */,
@@ -174,6 +184,24 @@
 				E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */,
 			);
 			path = vc;
+			sourceTree = "<group>";
+		};
+		E5B4EF1C226457F20076D0C4 /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				E5B4EF1D226458040076D0C4 /* BaseOCR.swift */,
+				E5B4EF1F226458D70076D0C4 /* SOCR.swift */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		E5B4EF2122645A380076D0C4 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				E5B4EF2222645A450076D0C4 /* BaseSummary.swift */,
+				E5B4EF2422645A9F0076D0C4 /* RuleBasedSummary.swift */,
+			);
+			path = Summary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,9 +416,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */,
+				E5B4EF2322645A450076D0C4 /* BaseSummary.swift in Sources */,
 				E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */,
 				E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */,
 				E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */,
+				E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */,
+				E5B4EF2522645A9F0076D0C4 /* RuleBasedSummary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +608,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20151537.Summaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -596,7 +628,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.ac.sogang.cscp2.20151537.Summaria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

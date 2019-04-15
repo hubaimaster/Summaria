@@ -28,21 +28,31 @@
                                     <constraint firstAttribute="height" constant="240" id="Kkc-aE-qhv"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp1-el-lIF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="656"/>
+                                <connections>
+                                    <action selector="didTakePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc3-DZ-Dzd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Do6-lV-UdE" secondAttribute="bottom" id="46B-di-Im3"/>
                             <constraint firstItem="Byr-j3-WCd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9Yp-1d-fmq"/>
+                            <constraint firstItem="Rp1-el-lIF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ays-wk-Nbd"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DsM-rI-anQ"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="top" secondItem="Byr-j3-WCd" secondAttribute="bottom" id="FUj-L6-qBH"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KGF-Wb-c6a"/>
                             <constraint firstItem="Byr-j3-WCd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KQc-Sq-HnG"/>
+                            <constraint firstItem="Rp1-el-lIF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KZi-S3-D8X"/>
                             <constraint firstItem="Byr-j3-WCd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PT9-Sk-Uhp"/>
+                            <constraint firstItem="Rp1-el-lIF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ujx-YI-8s9"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="top" secondItem="Byr-j3-WCd" secondAttribute="bottom" id="cNM-vy-7ZE"/>
                             <constraint firstAttribute="bottom" secondItem="Do6-lV-UdE" secondAttribute="bottom" id="hIe-eG-ETV"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="top" secondItem="Byr-j3-WCd" secondAttribute="bottom" id="uQn-eB-2Xv"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wsl-xT-ZtT"/>
                             <constraint firstItem="Do6-lV-UdE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x1x-VY-0Zr"/>
+                            <constraint firstItem="Do6-lV-UdE" firstAttribute="top" secondItem="Rp1-el-lIF" secondAttribute="bottom" id="xbS-wX-ana"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

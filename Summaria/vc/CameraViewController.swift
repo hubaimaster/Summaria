@@ -18,7 +18,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     @IBOutlet weak var previewImageView: UIImageView!
     
-    
     @IBAction func didTakePhoto(_ sender: Any) {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
@@ -36,7 +35,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     func setupCaptureSession(){
         captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .medium
+        captureSession.sessionPreset = .photo
         guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
             else {
                 print("Unable to access back camera!")
@@ -73,8 +72,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation()
             else { return }
-        let image = UIImage(data: imageData)
-        previewImageView.image = image
+        if let image = UIImage(data: imageData){
+            previewImageView.image = image
+            SOCR().getString(image: image) { (rawString) in
+                print(rawString)
+            }
+        }
+        
     }
     
 }

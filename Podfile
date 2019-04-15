@@ -7,6 +7,7 @@ target 'Summaria' do
 
   # Pods for Summaria
 	pod 'SwiftOCR'
+    pod 'OCRSlicer'
 
   target 'SummariaTests' do
     inherit! :search_paths
