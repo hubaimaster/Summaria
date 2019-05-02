@@ -16,6 +16,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
+    @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var captureButtonView: UIView!
     @IBOutlet weak var previewImageView: UIImageView!
     
     @IBAction func didTakePhoto(_ sender: Any) {
@@ -26,6 +28,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupCaptureSession()
+        setupCaptureButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,9 +36,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.captureSession.stopRunning()
     }
     
+    func setupCaptureButton(){
+        captureButton.layer.cornerRadius = captureButton.frame.height / 2
+        captureButton.layer.masksToBounds = true
+        captureButtonView.layer.cornerRadius = captureButtonView.frame.height / 2
+        captureButtonView.layer.masksToBounds = false
+        captureButtonView.layer.shadowOpacity = 0.2
+        captureButtonView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        captureButtonView.layer.shadowRadius = 5.0
+    }
+    
     func setupCaptureSession(){
         captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
+        captureSession.sessionPreset = .hd1280x720
         guard let backCamera = AVCaptureDevice.default(for: AVMediaType.video)
             else {
                 print("Unable to access back camera!")
