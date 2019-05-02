@@ -6,8 +6,7 @@ target 'Summaria' do
   use_frameworks!
 
   # Pods for Summaria
-	pod 'SwiftOCR'
-    pod 'OCRSlicer'
+	pod 'SwiftyTesseract',    '~> 2.0'
 
   target 'SummariaTests' do
     inherit! :search_paths

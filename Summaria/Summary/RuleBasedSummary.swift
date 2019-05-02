@@ -12,7 +12,12 @@ import Foundation
 class RuleBasedSummary: Summary{
     
     func getSummary(rawString: String, callback: @escaping (String?) -> Void) {
-        callback("Summ:\(rawString)")
+        // TODO: Tommy
+        // Input rawString from parameter and get summary form rawString
+        // and return summaryString via callback function
+        // I.E
+        //var summaryString = summary(rawString)
+        //callback(summaryString)
     }
     
 }

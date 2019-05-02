@@ -10,6 +10,7 @@
 		2821C7D6F8B1F6CDE6FD9FDD /* Pods_SummariaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */; };
 		C3C8BA73C6961158F340A3C7 /* Pods_SummariaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */; };
 		C974786D9EB306744CC14C33 /* Pods_Summaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */; };
+		E52E68D42276B7FC00ADCA5A /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E52E68D32276B7FC00ADCA5A /* tessdata */; };
 		E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */; };
 		E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */; };
 		E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B4EEEF226448BD0076D0C4 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		D10C761B85E2110969622A27 /* Pods-SummariaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaTests/Pods-SummariaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4C5664C02F8921E6A61D08D /* Pods-Summaria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summaria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Summaria/Pods-Summaria.debug.xcconfig"; sourceTree = "<group>"; };
 		E450E38F38468B4C3A47DB70 /* Pods-SummariaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaTests/Pods-SummariaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E52E68D32276B7FC00ADCA5A /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		E5B4EEE8226448BD0076D0C4 /* Summaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		E5B4EEEA226448BD0076D0C4 /* Summaria */ = {
 			isa = PBXGroup;
 			children = (
+				E52E68D32276B7FC00ADCA5A /* tessdata */,
 				E5B4EF1A226449DF0076D0C4 /* Config.swift */,
 				E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */,
 				E5B4EF2122645A380076D0C4 /* Summary */,
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5B4EEF6226448BE0076D0C4 /* LaunchScreen.storyboard in Resources */,
+				E52E68D42276B7FC00ADCA5A /* tessdata in Resources */,
 				E5B4EEF3226448BE0076D0C4 /* Assets.xcassets in Resources */,
 				E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */,
 			);
@@ -342,13 +346,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOCR/SwiftOCR.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTesseract/SwiftyTesseract.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOCR.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTesseract.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
