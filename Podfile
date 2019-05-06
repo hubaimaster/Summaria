@@ -7,6 +7,7 @@ target 'Summaria' do
 
   # Pods for Summaria
 	pod 'SwiftyTesseract',    '~> 2.0'
+    pod 'Reductio'
 
   target 'SummariaTests' do
     inherit! :search_paths

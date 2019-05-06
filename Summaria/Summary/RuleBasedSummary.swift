@@ -16,8 +16,14 @@ class RuleBasedSummary: Summary{
         // Input rawString from parameter and get summary form rawString
         // and return summaryString via callback function
         // I.E
-        //var summaryString = summary(rawString)
-        //callback(summaryString)
+        var summaryString = createSummary(input: rawString)
+        callback(summaryString)
+    }
+    
+    func createSummary(input: String) -> String {
+        var output = input
+        
+        return output
     }
     
 }
