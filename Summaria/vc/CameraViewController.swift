@@ -89,6 +89,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             previewImageView.image = image
             SOCR().getString(image: image) { (rawString) in
                 print(rawString)
+                RuleBasedSummary().getSummary(rawString: rawString!) { (summary) in
+                    print(summary)
+                    
+                }
             }
         }
         
