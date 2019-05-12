@@ -13,12 +13,12 @@
 		022C5BC1B6778E68C949EB5505A069C3 /* convolve.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B61F101CA1DEBBAF8CD229150048961 /* convolve.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		03C8C7FE7B966AAC9693E7CEE243E919 /* errcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E7C8486437E1F030B1B0FB37D089C12 /* errcode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		057462D65B356556292DE86089DAEE73 /* Pods-Summaria-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C4701FF736185D46E1E72114176A763 /* Pods-Summaria-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		084311C0BC2FE219379AAC9C0F26C3F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
 		0971F5F811117AE980D5FDBE632D0555 /* tesscallback.h in Headers */ = {isa = PBXBuildFile; fileRef = 390CD237F08BEF95E320DD26FAC8E0D2 /* tesscallback.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		09B8E9B37B4A44DE57FF6CD9422AEF55 /* Reductio-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A6F20056DDD2B98C0C7F60B6ECA4A5F /* Reductio-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E87CA2337C374AFD5F218FDD239D29 /* functions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B495359627B6FA27A35B4D240AFD942 /* functions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0E3E61C1D5717A9137C9DEF076AC71D0 /* bbuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 9696D71087EE4F7EEB3727E643186500 /* bbuffer.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		0E8864BD3CD69C877731292943DC49DE /* tiff.h in Headers */ = {isa = PBXBuildFile; fileRef = 23159A2E5F5129A18366A9FA2C6FA2B7 /* tiff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0ED402E101ED18C3F0C0926256020CAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		0F786798A8C5AECDB4CD70745828F642 /* bmfdata.h in Headers */ = {isa = PBXBuildFile; fileRef = EEEBE0E18141354A0F152563072E08AC /* bmfdata.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		109A067D0C53806D34CEB3C17B3A1C0C /* renderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C979061C648C61811C117640C29A196 /* renderer.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		11596F64E5B056DD75BA4AAFB55C6DB1 /* Pods-SummariaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC08B48FC726557D931B835DD0B5412 /* Pods-SummariaTests-dummy.m */; };
@@ -26,7 +26,6 @@
 		17917F157A1B693F67202D007CE6E72F /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BE09CE094E219508B0056793425DE1C /* list.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		18111F05557ACD4614125DEF9D306802 /* intsimdmatrixsse.h in Headers */ = {isa = PBXBuildFile; fileRef = 46DAECA3616129B64729491FF4F7707B /* intsimdmatrixsse.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		18372833FE3AB8FD0398D06B515E4B50 /* intsimdmatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D64854F9630ED4993E1156C6B018BAC /* intsimdmatrix.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		19E1CCEF47B176E486C891B3120CE53B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		1AF0F04BCE74493D75F3D0258D523D52 /* lstm.h in Headers */ = {isa = PBXBuildFile; fileRef = 0699F5F24C61A9605C235CAF6A9C17A3 /* lstm.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1D20B08CD8CB18B3FBEC8EF04A279F81 /* weightmatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = E73B2E385F56CAE72672ED965A13AD83 /* weightmatrix.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1F6CF1337C1502FAB831D9387608324E /* SwiftyTesseract.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C57E7579B44CA5CC7AF4A09A3FA07B8 /* SwiftyTesseract.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,10 +43,10 @@
 		32DED9AF2A90712B9C4E549766215117 /* Bundle+pathToTrainedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D3C3E4BFC4E5CAF596E5470972710 /* Bundle+pathToTrainedData.swift */; };
 		331AD032A0E987B759FF8F5A40D5E6B7 /* Stemmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BABE5731CB6A0A23926CDEEA366801 /* Stemmer.swift */; };
 		3BD69DC312B60E48EDB5BC5304EFB2BE /* gplot.h in Headers */ = {isa = PBXBuildFile; fileRef = BEB145C75E9649C68372FDB155DFB517 /* gplot.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		3C602E0CF6F1B228C864448316A1D863 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		3CD3AF60A1CFAA4FF197CDF2B6BE5C99 /* networkio.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D339B71946D58FAC02781F1FEA9BA9 /* networkio.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3F12F7BC9301BB59EB4335B0DEF98F67 /* endianness.h in Headers */ = {isa = PBXBuildFile; fileRef = 80547B26F3BC1BD7276FE599F1312489 /* endianness.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		40AD619A6D226D4522D376CB57E443CC /* unicharset.h in Headers */ = {isa = PBXBuildFile; fileRef = A6279188BB3842541384431C7DBFABF4 /* unicharset.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4190C6C524283DCCB001EAD01E622AFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		42A1E29A7B3E1BC26E4EE3F71EAC021A /* stringcode.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B6C1FF6E78ACC4F40EFDE567BB73DA /* stringcode.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		48DBD5D35ED7239BB3A01C833472D272 /* allheaders.h in Headers */ = {isa = PBXBuildFile; fileRef = CA130111F6A5819C117B5895739BA678 /* allheaders.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		49025E03317110D05EC18E21C4E1BA5A /* bmf.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E9A11A8FDEFD1F047E6112784D7A6D /* bmf.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -56,7 +55,6 @@
 		5248751350412469F1C79013A3665F53 /* Pods-SummariaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E8DD0F91C03FBB8CA01DAB1E2F5A98 /* Pods-SummariaUITests-dummy.m */; };
 		55F878F9F448EDB310038B0B5CAFD500 /* pnglibconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ECF6E64827573764870C8A7351F2AF9 /* pnglibconf.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		57F3C3A6A06E379A49893A9F312562DB /* host.h in Headers */ = {isa = PBXBuildFile; fileRef = 57B4853A7105585AB3EE9B6B765A19A1 /* host.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		5C3184C27D1CD1FDE61382DDCC600B49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		5C7E0750B5D203C101C789A81E8D80BA /* ndminx.h in Headers */ = {isa = PBXBuildFile; fileRef = 25EE3CFF19B8F03E300D57780EAE4508 /* ndminx.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		5D8BBBE42184F42E509298D169A2C840 /* sudoku.h in Headers */ = {isa = PBXBuildFile; fileRef = 964F0686881D8BD5A0552BC4741A9E53 /* sudoku.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		5DB0C77C4D3450D98AD537BA78D07C3F /* SwiftyTesseract-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B0B986B0EE6994C2A5BE41AE51755 /* SwiftyTesseract-dummy.m */; };
@@ -71,6 +69,7 @@
 		733EAF409BE194A51A4BD2E98B13AD09 /* fileerr.h in Headers */ = {isa = PBXBuildFile; fileRef = ED85A88646002C6D66E9D034C546A670 /* fileerr.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		73B82BEECA6C6DC40D425C3AF94D80F4 /* jpeglib.h in Headers */ = {isa = PBXBuildFile; fileRef = 144285DE246366987BF694E206673424 /* jpeglib.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		75A698C4778BCE4A2FEA3CE63B0EDB3B /* TesseractVariableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE92461A48A4C90C1D101A887DDF6A07 /* TesseractVariableName.swift */; };
+		7691B4D8936AFE0BED0D7B797AAE5F66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		76E6A74B1139DF61EC2E23D730D1C603 /* alltypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 037FF3CAAE6509D67731B416EC99C4F7 /* alltypes.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		799B4BF957488AC6343CA291014B651D /* regutils.h in Headers */ = {isa = PBXBuildFile; fileRef = 578F81E0B770D972A902493B520CB803 /* regutils.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		79B6AC5872486AA7295BA71D2FFEF6A5 /* memry.h in Headers */ = {isa = PBXBuildFile; fileRef = 1417FFE9AB8F51C0B73D85F3B539CA07 /* memry.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -81,13 +80,14 @@
 		85447349C7EA927522F010F73BA380EB /* lstmrecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = EBCD35964595372018B9895E4F264097 /* lstmrecognizer.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8A5D30BA962B805F557E78F1EB425A32 /* tiffvers.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A38E79DA5171C1CBECA59ACB3306120 /* tiffvers.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8B782517954ED463129B52C09D7C8064 /* arrayaccess.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F77CB6E0D5F3754C77AF87FA5606A78 /* arrayaccess.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		9000D53BD524730F841A8CA4121F932B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		8F5F70782FA61E198E50FA76DF1C10C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		904F29E04C9AB23B9378E860648A5E30 /* unicharcompress.h in Headers */ = {isa = PBXBuildFile; fileRef = 76EBCD0098DFD6EC935C22AE45B98970 /* unicharcompress.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		90BEDE3D7FE815693FA65AD5F250EB3D /* genericvector.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC34777E86033A95E80613BD97C9F8A /* genericvector.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		90CB7CDC10C2ADB519762624FDCBB469 /* tess_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3B22E57C63B7AD8EF282CC303D00F2 /* tess_version.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		948D2F0A7BA641D2D9026E9BB02060D0 /* Reductio-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C645FDC73B91D03E61FC738334E12491 /* Reductio-dummy.m */; };
 		97A2047223251CD4E1D8733A0A0BBA10 /* maxpool.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E80F111096973C82CE683C8D201B596 /* maxpool.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9B3630974B45F800703E3952FC9C58EB /* watershed.h in Headers */ = {isa = PBXBuildFile; fileRef = 20B3F212AF14D621C4B843A36EE7C4AA /* watershed.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		9B699BAB5D2131A2E8E0BBBA01537FED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */; };
 		9F33B2924896B8D8E9DBB5050F81751D /* simddetect.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D7C0871721C4ED8820DD153809415C0 /* simddetect.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A066133352D1A03108D25DA0F6F129B3 /* basedir.h in Headers */ = {isa = PBXBuildFile; fileRef = E0BC002AAF73669F381601AB4EC5A152 /* basedir.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A152EE4E884CEABE1A715097A79B36C0 /* readbarcode.h in Headers */ = {isa = PBXBuildFile; fileRef = 884E51208C86409BD618E059F5D88AA5 /* readbarcode.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -102,7 +102,6 @@
 		B31225607A5AC693D7E42E11060B4D8A /* Pods-SummariaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E689DADA03E3E83C1FD2920CB82BDBC3 /* Pods-SummariaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B322D6FB3B4E0C863841ACF0A3E62BD2 /* input.h in Headers */ = {isa = PBXBuildFile; fileRef = 993A738FA73FA7599FF0ECD24F9CE03B /* input.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B32A169AAB712A69704AECD5BD35D7AA /* Array+Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6502EB83B696455241EE7308BE49FE5 /* Array+Combinations.swift */; };
-		BA45D29E426CCDAF6B913D25210F3CF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		BC42523AE8B89113AA2F0F8BCF6E23B3 /* Pods-SummariaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41DAF01DF108177104CC9E2B5503CB47 /* Pods-SummariaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDA9C4A2D15B2BFCA5BDE16629EAC7B1 /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AE9250AEFB15DA854981C33C7C8570 /* Sentence.swift */; };
 		BEC3307B2B50893A998D29ADFECB8D28 /* EngineMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE66676D3539C79F48E46AC4312E4EC2 /* EngineMode.swift */; };
@@ -135,6 +134,7 @@
 		EC9CD3914892FC50527C709EA9BF628A /* stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F268F596D7E68D8C38713617A63BD4A /* stack.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EDB451FA38B209995A511D7B0D7CE187 /* recodebeam.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E311313C2A5ABD73201B0846936BBED /* recodebeam.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		EE36731BCA1517E81D09BAE7D650C62B /* morph.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E4D4F7A03157641D3CE7B1F12B2310 /* morph.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		EF10EC2D2CE8575788D274A3B1D12CD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */; };
 		F31B048C0389D5210346C96EB70906C9 /* reversed.h in Headers */ = {isa = PBXBuildFile; fileRef = 9116C757DE99D4B4B003A5B05711E617 /* reversed.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F6101C5B25672022722ED69B63E96126 /* dotproductsse.h in Headers */ = {isa = PBXBuildFile; fileRef = 680D3934444634937B16C5FBFAB95B99 /* dotproductsse.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F7E84DA7172B650D0B5A0F362CC38AFA /* rbtree.h in Headers */ = {isa = PBXBuildFile; fileRef = 272956CA6416CC180A74EDC21A870638 /* rbtree.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -207,7 +207,6 @@
 		2D0B70B9EED4C94A2E9FCE55838174EF /* Pods-SummariaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SummariaUITests-Info.plist"; sourceTree = "<group>"; };
 		2D4872DC0ED76AE4D8C18D984DA3DDA3 /* Pods-Summaria-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Summaria-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2E9A91693B276826C7EEF40670E05BE2 /* Pods_SummariaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SummariaTests.framework; path = "Pods-SummariaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		34BABE5731CB6A0A23926CDEEA366801 /* Stemmer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stemmer.swift; path = Source/Stemmer.swift; sourceTree = "<group>"; };
 		35AE9250AEFB15DA854981C33C7C8570 /* Sentence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Sentence.swift; path = Source/Sentence.swift; sourceTree = "<group>"; };
 		37F7552044587B3B43446218ADA73578 /* SwiftyTesseract-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyTesseract-Info.plist"; sourceTree = "<group>"; };
@@ -221,8 +220,8 @@
 		3DFF6B5573F51ADA35C94495C77EA3C7 /* unicharmap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unicharmap.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/unicharmap.h; sourceTree = "<group>"; };
 		3ECF6E64827573764870C8A7351F2AF9 /* pnglibconf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pnglibconf.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/pnglibconf.h; sourceTree = "<group>"; };
 		3F7CFF1B61DCD27A01673257FFD56CE5 /* Pods-SummariaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SummariaTests.modulemap"; sourceTree = "<group>"; };
+		40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		41DAF01DF108177104CC9E2B5503CB47 /* Pods-SummariaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SummariaUITests-umbrella.h"; sourceTree = "<group>"; };
-		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		438BBB1E5DF054353506BB633F60745B /* reconfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = reconfig.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/reconfig.h; sourceTree = "<group>"; };
 		463B824E79D16C4B4FE46062974FF48B /* publictypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = publictypes.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/publictypes.h; sourceTree = "<group>"; };
 		46DAECA3616129B64729491FF4F7707B /* intsimdmatrixsse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = intsimdmatrixsse.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/intsimdmatrixsse.h; sourceTree = "<group>"; };
@@ -333,6 +332,7 @@
 		E73BA28215C16A3A2A516D8700FA01F2 /* thresholder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = thresholder.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/thresholder.h; sourceTree = "<group>"; };
 		E751C3622781C02DD795152538EA3C08 /* Pods-SummariaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SummariaUITests.modulemap"; sourceTree = "<group>"; };
 		EBCD35964595372018B9895E4F264097 /* lstmrecognizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = lstmrecognizer.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/lstmrecognizer.h; sourceTree = "<group>"; };
+		ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		ED85A88646002C6D66E9D034C546A670 /* fileerr.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fileerr.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/tesseract/fileerr.h; sourceTree = "<group>"; };
 		EE40D1813292EABF649DBD61EFDC3FED /* leptwin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = leptwin.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/leptonica/leptwin.h; sourceTree = "<group>"; };
 		EEEBE0E18141354A0F152563072E08AC /* bmfdata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = bmfdata.h; path = SwiftyTesseract/SwiftyTesseract/dependencies/include/leptonica/bmfdata.h; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C3184C27D1CD1FDE61382DDCC600B49 /* Foundation.framework in Frameworks */,
+				7691B4D8936AFE0BED0D7B797AAE5F66 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +361,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C602E0CF6F1B228C864448316A1D863 /* Foundation.framework in Frameworks */,
+				8F5F70782FA61E198E50FA76DF1C10C0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +369,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9000D53BD524730F841A8CA4121F932B /* Foundation.framework in Frameworks */,
+				0ED402E101ED18C3F0C0926256020CAC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +377,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19E1CCEF47B176E486C891B3120CE53B /* Foundation.framework in Frameworks */,
-				084311C0BC2FE219379AAC9C0F26C3F5 /* UIKit.framework in Frameworks */,
+				9B699BAB5D2131A2E8E0BBBA01537FED /* Foundation.framework in Frameworks */,
+				EF10EC2D2CE8575788D274A3B1D12CD5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA45D29E426CCDAF6B913D25210F3CF8 /* Foundation.framework in Frameworks */,
+				4190C6C524283DCCB001EAD01E622AFC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +526,7 @@
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
+				E169A450ED27AC725DF52953F66D11E0 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -627,11 +627,11 @@
 			);
 			sourceTree = "<group>";
 		};
-		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+		E169A450ED27AC725DF52953F66D11E0 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
-				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+				40CB39E715FBCDAA142E6513E126200A /* Foundation.framework */,
+				ECF2A2B0720AE923C22BED3192888BE0 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -932,8 +932,8 @@
 				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -1113,66 +1113,6 @@
 			};
 			name = Debug;
 		};
-		32C2FB3BD9A2402E2347CE50F405010A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
 		3C9D3F2B83C9BCAE1926F3DA2EB2F4E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 213910F57AB0BE8347277CD767DCAABF /* Reductio.xcconfig */;
@@ -1285,70 +1225,6 @@
 			};
 			name = Release;
 		};
-		65E8432CA1AC1817F746BE6B5C4F067E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
 		7CAAFBEB20419DC78B9A8C88FD151064 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 056A63E0E9B865B41D99CD72B71C6033 /* Pods-SummariaUITests.debug.xcconfig */;
@@ -1426,6 +1302,66 @@
 			};
 			name = Release;
 		};
+		A105C1752A0A49B30ED621B71E226CDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
 		A7C23F7C15DADAE071F9C2ED55557EAA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDA4321BDD1AF9961E1D0607FA58B5F3 /* Pods-SummariaTests.debug.xcconfig */;
@@ -1461,6 +1397,70 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1391485F05B41BD35738A433056B7FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
@@ -1599,8 +1599,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				65E8432CA1AC1817F746BE6B5C4F067E /* Debug */,
-				32C2FB3BD9A2402E2347CE50F405010A /* Release */,
+				C1391485F05B41BD35738A433056B7FA /* Debug */,
+				A105C1752A0A49B30ED621B71E226CDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

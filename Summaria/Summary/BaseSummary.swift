@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol Summary {
-    func getSummary(rawString: String, callback: @escaping (String?)->Void)
+    func getSummary(rawString: String, callback: @escaping ([String]?)->Void)
 }
