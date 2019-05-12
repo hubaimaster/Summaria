@@ -15,20 +15,17 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    
-    @IBOutlet weak var captureButton: UIButton!
-    @IBOutlet weak var captureButtonView: UIView!
+
+    @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var previewImageView: UIImageView!
+    @IBOutlet weak var summaryPreviewLabel: UILabel!
     
-    @IBAction func didTakePhoto(_ sender: Any) {
-        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        stillImageOutput.capturePhoto(with: settings, delegate: self)
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupCaptureSession()
-        setupCaptureButton()
+        setupCornerView()
+        setupTakePhotoTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,16 +33,14 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.captureSession.stopRunning()
     }
     
-    func setupCaptureButton(){
-        captureButton.layer.cornerRadius = captureButton.frame.height / 2
-        captureButton.layer.masksToBounds = true
-        captureButtonView.layer.cornerRadius = captureButtonView.frame.height / 2
-        captureButtonView.layer.masksToBounds = false
-        captureButtonView.layer.shadowOpacity = 0.2
-        captureButtonView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        captureButtonView.layer.shadowRadius = 5.0
+    func setupCornerView(){
+        cornerView.layer.cornerRadius = 10
+        cornerView.layer.masksToBounds = true
+        cornerView.layer.shadowOpacity = 0.4
+        cornerView.layer.shadowColor = UIColor.black.cgColor
+        cornerView.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
-    
+  
     func setupCaptureSession(){
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .hd1280x720
@@ -74,6 +69,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         videoPreviewLayer.connection?.videoOrientation = .portrait
         previewImageView.layer.addSublayer(videoPreviewLayer)
         previewImageView.contentMode = .scaleAspectFill
+
         DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
             self.captureSession.startRunning()
             DispatchQueue.main.async {
@@ -82,16 +78,26 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
+    func setupTakePhotoTimer(){
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
+            let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            self.stillImageOutput.capturePhoto(with: settings, delegate: self)
+            self.setupTakePhotoTimer()
+        }
+    }
+    
+    func setSummaryPreviewText(text: String?){
+        summaryPreviewLabel.text = text
+    }
+    
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation()
             else { return }
         if let image = UIImage(data: imageData){
             previewImageView.image = image
             SOCR().getString(image: image) { (rawString) in
-                print(rawString)
                 RuleBasedSummary().getSummary(rawString: rawString!) { (summary) in
-                    print(summary)
-                    
+                    self.setSummaryPreviewText(text: summary)
                 }
             }
         }

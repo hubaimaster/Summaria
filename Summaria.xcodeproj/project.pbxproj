@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2821C7D6F8B1F6CDE6FD9FDD /* Pods_SummariaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */; };
+		827F5F4F22885C26002008BE /* SummaryPreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827F5F4E22885C26002008BE /* SummaryPreView.xib */; };
+		827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F5F5022885C34002008BE /* SummaryPreView.swift */; };
 		C3C8BA73C6961158F340A3C7 /* Pods_SummariaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */; };
 		C974786D9EB306744CC14C33 /* Pods_Summaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */; };
 		E52E68D42276B7FC00ADCA5A /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E52E68D32276B7FC00ADCA5A /* tessdata */; };
@@ -45,6 +47,8 @@
 /* Begin PBXFileReference section */
 		193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummariaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CCC2776264AD0089807E60 /* Pods-SummariaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		827F5F4E22885C26002008BE /* SummaryPreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryPreView.xib; sourceTree = "<group>"; };
+		827F5F5022885C34002008BE /* SummaryPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPreView.swift; sourceTree = "<group>"; };
 		A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summaria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A814D847236FB03479F0A165 /* Pods-Summaria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summaria.release.xcconfig"; path = "Pods/Target Support Files/Pods-Summaria/Pods-Summaria.release.xcconfig"; sourceTree = "<group>"; };
 		B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummariaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		827F5F4D22885C05002008BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827F5F4E22885C26002008BE /* SummaryPreView.xib */,
+				827F5F5022885C34002008BE /* SummaryPreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E5B4EEDF226448BD0076D0C4 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +165,7 @@
 				E52E68D32276B7FC00ADCA5A /* tessdata */,
 				E5B4EF1A226449DF0076D0C4 /* Config.swift */,
 				E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */,
+				827F5F4D22885C05002008BE /* View */,
 				E5B4EF2122645A380076D0C4 /* Summary */,
 				E5B4EF1C226457F20076D0C4 /* OCR */,
 				E5B4EF19226449D10076D0C4 /* vc */,
@@ -318,6 +332,7 @@
 				E5B4EEF6226448BE0076D0C4 /* LaunchScreen.storyboard in Resources */,
 				E52E68D42276B7FC00ADCA5A /* tessdata in Resources */,
 				E5B4EEF3226448BE0076D0C4 /* Assets.xcassets in Resources */,
+				827F5F4F22885C26002008BE /* SummaryPreView.xib in Resources */,
 				E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +442,7 @@
 				E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */,
 				E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */,
 				E5B4EF2522645A9F0076D0C4 /* RuleBasedSummary.swift in Sources */,
+				827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
