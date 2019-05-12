@@ -1,0 +1,6 @@
+framework module Reductio {
+  umbrella header "Reductio-umbrella.h"
+
+  export *
+  module * { export * }
+}
