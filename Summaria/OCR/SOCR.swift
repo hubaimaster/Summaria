@@ -16,7 +16,7 @@ class SOCR: OCR {
     let swiftyTesseract = SwiftyTesseract(language: .english)
     
     func getString(image: UIImage, callback: @escaping (String?)->Void){
-        guard let image = image.scaleImage(640) else {
+        guard let image = image.scaleImage(320) else {
             return
         }
         swiftyTesseract.whiteList = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"

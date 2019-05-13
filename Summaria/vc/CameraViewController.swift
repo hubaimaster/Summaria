@@ -20,17 +20,28 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var summaryPreviewLabel: UILabel!
     
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var photoButton: UIButton!
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupCaptureSession()
         setupCornerView()
-        setupTakePhotoTimer()
+        setupButton()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.captureSession.stopRunning()
+    }
+    
+    @IBAction func takePhoto(_ sender: Any) {
+        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        stillImageOutput.capturePhoto(with: settings, delegate: self)
     }
     
     func setupCornerView(){
@@ -78,16 +89,18 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    func setupTakePhotoTimer(){
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { (timer) in
-            let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-            self.stillImageOutput.capturePhoto(with: settings, delegate: self)
-            self.setupTakePhotoTimer()
-        }
+    func setupButton(){
+        buttonView.layer.cornerRadius = buttonView.frame.height / 2
+        buttonView.layer.masksToBounds = true
+        photoButton.layer.cornerRadius = photoButton.frame.height / 2
+        photoButton.layer.masksToBounds = true
     }
     
     func setSummaryPreviewText(text: String?){
-        summaryPreviewLabel.text = text
+        UIView.animate(withDuration: 0.5) {
+            self.cornerView.alpha = 0.8
+            self.summaryPreviewLabel.text = text
+        }
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -96,9 +109,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if let image = UIImage(data: imageData){
             previewImageView.image = image
             SOCR().getString(image: image) { (rawString) in
-                RuleBasedSummary().getSummary(rawString: rawString!) { (summary) in
-                    self.setSummaryPreviewText(text: summary)
-                }
+                self.setSummaryPreviewText(text: rawString)
             }
         }
         
