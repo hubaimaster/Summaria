@@ -71,9 +71,9 @@ If you wish to contribute to our project, please take a look at the guidelines.<
 
 ## Authors
 
-* **Kim Chang Hwan** - *Front-End developer* - [hubaimaster](https://github.com/hubaimaster)
+* **Kim Chang Hwan** - *Front-End Developer* - [hubaimaster](https://github.com/hubaimaster)
 * **Tommy Hansen** - *Back-End Developer* - [Almyk](https://github.com/Almyk)
-* **Park Yeo Hyeon** - *UI/UX Designer* []()
+* **Park Yeo Hyeon** - *UI/UX Designer* [oinkoinkduck](https://github.com/oinkoinkduck)
 * **Kim Min Woo** - *Documentation* - [JoeyValentine](https://github.com/JoeyValentine)
 
 
