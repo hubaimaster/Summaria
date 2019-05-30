@@ -13,4 +13,7 @@ struct Config {
     struct vc {
         static let CameraViewController = "CameraViewController"
     }
+    struct cell {
+        static let ScannedDocumentCell = "ScannedDocumentCell"
+    }
 }

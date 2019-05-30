@@ -20,18 +20,24 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var summaryPreviewLabel: UILabel!
     
-    @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var photoButton: UIButton!
-    
     override var prefersStatusBarHidden: Bool{
         return true
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupCaptureSession()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupCaptureSession()
         setupCornerView()
         setupButton()
+        self.captureSession?.startRunning()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +49,11 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
         stillImageOutput.capturePhoto(with: settings, delegate: self)
     }
+    
+    @IBAction func dismissViewController(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     func setupCornerView(){
         cornerView.layer.cornerRadius = 10
@@ -66,7 +77,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             if captureSession.canAddInput(input) && captureSession.canAddOutput(stillImageOutput) {
                 captureSession.addInput(input)
                 captureSession.addOutput(stillImageOutput)
-                setupLivePreview()
+                UIView.performWithoutAnimation {
+                    self.setupLivePreview()
+                }
             }
         }
         catch let error  {
@@ -90,10 +103,10 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     func setupButton(){
-        buttonView.layer.cornerRadius = buttonView.frame.height / 2
-        buttonView.layer.masksToBounds = true
-        photoButton.layer.cornerRadius = photoButton.frame.height / 2
-        photoButton.layer.masksToBounds = true
+//        buttonView.layer.cornerRadius = buttonView.frame.height / 2
+//        buttonView.layer.masksToBounds = true
+//        photoButton.layer.cornerRadius = photoButton.frame.height / 2
+//        photoButton.layer.masksToBounds = true
     }
     
     func setSummaryPreviewText(text: String?){
