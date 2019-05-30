@@ -2,9 +2,9 @@
 
 
 <p align="right">
-  <a href="">
+  <!-- <a href=""> -->
     <img alt="Download on the App Store" title="App Store"								src="http://i.imgur.com/0n2zqHD.png" width="140">
-  </a>
+  <!-- </a> -->
 </p>
 
 
@@ -49,7 +49,7 @@ Please feel free to give us any feedback or feature requests by [opening an issu
 
 ## Contribution
 
-If you wish to contribute to our project, please take a look at the [guidelines](./CONTRIBUTING.md)!
+If you wish to contribute to our project, please take a look at the guidelines.<!--[guidelines](./CONTRIBUTING.md)!-->
 
 
 ## Build with
