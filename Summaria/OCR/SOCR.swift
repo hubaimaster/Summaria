@@ -8,21 +8,36 @@
 
 import Foundation
 import UIKit
-import SwiftyTesseract
+import Alamofire
+import SwiftyJSON
 
 
 class SOCR: OCR {
     
-    let swiftyTesseract = SwiftyTesseract(language: .english)
-    
     func getString(image: UIImage, callback: @escaping (String?)->Void){
-        guard let image = image.scaleImage(320) else {
+        guard let image = image.scaleImage(320), let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() else {
             return
         }
-        swiftyTesseract.whiteList = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        swiftyTesseract.performOCR(on: image) { recognizedString in
-            guard let recognizedString = recognizedString else { return }
-            callback(recognizedString)
+        let apiKey = "AIzaSyB-ItY65dobdKGVRaPv4sG7sUOz7Su4Jq0"
+        let baseUrl = "https://vision.googleapis.com/v1/images:annotate?key=\(apiKey)"
+        let params = ["requests": [
+                "image": ["content": "\(imageBase64)"],
+                "features": [
+                    ["type": "DOCUMENT_TEXT_DETECTION"]
+                ]
+            ]
+        ]
+        Alamofire.request(baseUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).response { (resp) in
+            if let error = resp.error{
+                print("ERROR:[\(error)]")
+            }else if let data = resp.data{
+                if let json = try? JSON(data: data), let responses = json["responses"].array{
+                    for response in responses{
+                        let text = response["fullTextAnnotation"]["text"].string
+                        callback(text)
+                    }
+                }
+            }
         }
     }
 }

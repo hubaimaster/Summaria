@@ -19,10 +19,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     @IBOutlet weak var cornerView: UIView!
     @IBOutlet weak var previewImageView: UIImageView!
     @IBOutlet weak var summaryPreviewLabel: UILabel!
-    
-    override var prefersStatusBarHidden: Bool{
-        return true
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,8 +117,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             else { return }
         if let image = UIImage(data: imageData){
             previewImageView.image = image
-            SOCR().getString(image: image) { (rawString) in
-                self.setSummaryPreviewText(text: rawString)
+            SOCR().getString(image: image) { (text) in
+                let avc = UIAlertController(title: "스캔됨", message: text, preferredStyle: UIAlertController.Style.actionSheet);
+                avc.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action) in
+                    avc.dismiss(animated: true, completion: nil)
+                }))
+                self.present(avc, animated: true, completion: nil)
             }
         }
         

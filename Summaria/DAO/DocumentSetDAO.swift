@@ -9,7 +9,15 @@
 import Foundation
 
 class AWSIDocumentSetDAO: DocumentSetDAO{
-    func getMyDocumentSet(callback: @escaping (DocumentSetModel?) -> Void) {
+    func getMyDocumentSets(callback: @escaping ([DocumentSetModel]?) -> Void) {
+        
+    }
+    
+    func createDocumentSet(callback: @escaping (DocumentSetModel?) -> Void) {
+        
+    }
+    
+    func addDocument(documentSetId: String, documentId: String, callback: @escaping (Bool) -> Void) {
         
     }
 }

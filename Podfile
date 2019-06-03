@@ -6,8 +6,8 @@ target 'Summaria' do
   use_frameworks!
 
   # Pods for Summaria
-	pod 'SwiftyTesseract',    '~> 2.0'
-  pod 'Reductio'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON'
 
   target 'SummariaTests' do
     inherit! :search_paths

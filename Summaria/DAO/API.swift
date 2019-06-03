@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 
 class API{
     
+    static let auth = AWSIAuthDAO()
+    static let document = AWSIDocumentDAO()
+    static let documentSet = AWSIDocumentSetDAO()
     
+}
+
+protocol AuthDAO {
+    func guest(callback: @escaping (Bool)->Void)
+    func logout(callback: @escaping (Bool)->Void)
 }
 
 protocol DocumentSetDAO {
@@ -22,4 +31,6 @@ protocol DocumentSetDAO {
 
 protocol DocumentDAO {
     func getDocument(id: String, callback: @escaping (DocumentModel?)->Void)
+    func createDocument(title: String, text: String, callback: @escaping (DocumentModel)->Void)
+    func deleteDocument(id: String, callback: @escaping (Bool)->Void)
 }

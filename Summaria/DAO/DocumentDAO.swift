@@ -9,7 +9,17 @@
 import Foundation
 
 class AWSIDocumentDAO: DocumentDAO{
-    func getDocument(id: String, callback: @escaping (DocumentModel?) -> Void) {
+    func createDocument(title: String, text: String, callback: @escaping (DocumentModel) -> Void) {
         
+    }
+    
+    func deleteDocument(id: String, callback: @escaping (Bool) -> Void) {
+        
+    }
+    
+    func getDocument(id: String, callback: @escaping (DocumentModel?) -> Void) {
+        AWSI.instance.database_get_item(item_id: id) { (resp) in
+            
+        }
     }
 }

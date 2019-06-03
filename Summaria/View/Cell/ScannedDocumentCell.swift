@@ -11,7 +11,7 @@ import UIKit
 
 class ScannedDocumentCell: UITableViewCell {
     
-    var model: ScannedDocumentSetModel?{
+    var model: DocumentSetModel?{
         didSet{
             self.setup()
         }

@@ -12,6 +12,8 @@
 		827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F5F5022885C34002008BE /* SummaryPreView.swift */; };
 		C3C8BA73C6961158F340A3C7 /* Pods_SummariaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */; };
 		C974786D9EB306744CC14C33 /* Pods_Summaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */; };
+		E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FAFEF22A4DD7F00AD7515 /* AWSI.swift */; };
+		E51FAFF222A4DE4900AD7515 /* AuthDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */; };
 		E5227117229BA24F003DC8DF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227116229BA24F003DC8DF /* TabbarViewController.swift */; };
 		E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227119229BBA40003DC8DF /* ScannedDocumentCell.swift */; };
 		E522711D229BBAEF003DC8DF /* DocumentSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522711C229BBAEF003DC8DF /* DocumentSetModel.swift */; };
@@ -63,6 +65,8 @@
 		D10C761B85E2110969622A27 /* Pods-SummariaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaTests/Pods-SummariaTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4C5664C02F8921E6A61D08D /* Pods-Summaria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summaria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Summaria/Pods-Summaria.debug.xcconfig"; sourceTree = "<group>"; };
 		E450E38F38468B4C3A47DB70 /* Pods-SummariaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaTests/Pods-SummariaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E51FAFEF22A4DD7F00AD7515 /* AWSI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSI.swift; sourceTree = "<group>"; };
+		E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDAO.swift; sourceTree = "<group>"; };
 		E5227116229BA24F003DC8DF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E5227119229BBA40003DC8DF /* ScannedDocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedDocumentCell.swift; sourceTree = "<group>"; };
 		E522711C229BBAEF003DC8DF /* DocumentSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSetModel.swift; sourceTree = "<group>"; };
@@ -176,8 +180,10 @@
 			isa = PBXGroup;
 			children = (
 				E5227123229BC459003DC8DF /* API.swift */,
-				E5227125229BC488003DC8DF /* DocumentSetDAO.swift */,
+				E51FAFEF22A4DD7F00AD7515 /* AWSI.swift */,
+				E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */,
 				E5227127229BC492003DC8DF /* DocumentDAO.swift */,
+				E5227125229BC488003DC8DF /* DocumentSetDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -408,18 +414,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Reductio/Reductio.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyTesseract/SwiftyTesseract.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reductio.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTesseract.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B7C40EA794E00E6F1ED08D9 /* [CP] Check Pods Manifest.lock */ = {
@@ -487,11 +493,13 @@
 				E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */,
 				E5227126229BC488003DC8DF /* DocumentSetDAO.swift in Sources */,
 				E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */,
+				E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */,
 				E5B4EF2322645A450076D0C4 /* BaseSummary.swift in Sources */,
 				E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */,
 				E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */,
 				E5227124229BC459003DC8DF /* API.swift in Sources */,
 				E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */,
+				E51FAFF222A4DE4900AD7515 /* AuthDAO.swift in Sources */,
 				E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */,
 				E5B4EF2522645A9F0076D0C4 /* RuleBasedSummary.swift in Sources */,
 				827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */,

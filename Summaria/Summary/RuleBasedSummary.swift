@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Reductio
 
 
 class RuleBasedSummary: Summary{
@@ -22,13 +21,7 @@ class RuleBasedSummary: Summary{
     }
     
     func createSummary(input: String, callback: @escaping (String)->Void) {
-        Reductio.summarize(text: input, compression: compRate) { (phrases) in
-            var output = ""
-            for p in phrases{
-                output += "\(p)\n"
-            }
-            callback(output)
-        }
+        
     }
     
 }
