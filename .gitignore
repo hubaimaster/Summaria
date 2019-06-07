@@ -2,6 +2,11 @@
 # Created by https://www.gitignore.io/api/swift,xcode,macos,cocoapods
 # Edit at https://www.gitignore.io/?templates=swift,xcode,macos,cocoapods
 
+
+# Secret files (API KEY etc..)
+Secret*
+
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 
@@ -131,5 +136,3 @@ iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/swift,xcode,macos,cocoapods
 
-# Secret files (API KEY etc..)
-Summaria/Secret/
