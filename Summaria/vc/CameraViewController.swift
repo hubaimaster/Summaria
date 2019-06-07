@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CropViewController
 
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
@@ -31,8 +32,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupCornerView()
-        setupButton()
         self.captureSession?.startRunning()
     }
     
@@ -50,14 +49,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    func setupCornerView(){
-        cornerView.layer.cornerRadius = 10
-        cornerView.layer.masksToBounds = true
-        cornerView.layer.shadowOpacity = 0.4
-        cornerView.layer.shadowColor = UIColor.black.cgColor
-        cornerView.layer.shadowOffset = CGSize(width: 1, height: 1)
-    }
   
     func setupCaptureSession(){
         captureSession = AVCaptureSession()
@@ -98,13 +89,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    func setupButton(){
-//        buttonView.layer.cornerRadius = buttonView.frame.height / 2
-//        buttonView.layer.masksToBounds = true
-//        photoButton.layer.cornerRadius = photoButton.frame.height / 2
-//        photoButton.layer.masksToBounds = true
-    }
-    
     func setSummaryPreviewText(text: String?){
         UIView.animate(withDuration: 0.5) {
             self.cornerView.alpha = 0.8
@@ -117,16 +101,82 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             else { return }
         if let image = UIImage(data: imageData){
             previewImageView.image = image
-            SOCR().getString(image: image) { (text) in
-                let avc = UIAlertController(title: "스캔됨", message: text, preferredStyle: UIAlertController.Style.actionSheet);
-                avc.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action) in
-                    avc.dismiss(animated: true, completion: nil)
-                }))
-                self.present(avc, animated: true, completion: nil)
-            }
+            presentCropViewController(image: image)
         }
-        
+    }
+    
+    func presentCropViewController(image: UIImage) {
+        let cropViewController = CropViewController(image: image)
+        cropViewController.delegate = self
+        present(cropViewController, animated: true, completion: nil)
     }
     
 }
 
+extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        cropViewController.dismiss(animated: true) {
+            self.presentPopupView(image: image)
+        }
+    }
+    
+    func presentPopupView(image: UIImage) {
+        SOCR().getString(image: image) { (text) in
+            guard let text = text else {
+                return
+            }
+            let alert = UIAlertController(title: "스캔됨", message: text, preferredStyle: UIAlertController.Style.actionSheet);
+            alert.addAction(UIAlertAction(title: "저장", style: .default, handler: { (action) in
+                self.saveToEnd(text: text, image: image)
+            }))
+            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (action) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func getDocumentTitle(callback: @escaping (_ title: String)->Void) {
+        let alert = UIAlertController(title: "문서 제목", message: nil, preferredStyle: .alert)
+        var textField: UITextField?
+        //alert.view = textField
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (action) in
+        }))
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action) in
+            if let documentTitle = textField?.text, documentTitle.count > 0{
+                callback(documentTitle)
+            }else{
+                let documentTitle = "이름없음"
+                callback(documentTitle)
+            }
+        }))
+        alert.addTextField { (_textField) in
+            textField = _textField
+            _textField.placeholder = "문서 제목을 입력하세요"
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func saveToEnd(text: String, image: UIImage) {
+        getDocumentTitle { (title) in
+            self.save(text: text, image: image, documentTitle: title){
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func save(text: String, image: UIImage, documentTitle: String, callback: @escaping (()->Void)={}){
+        guard let data = image.pngData() else {
+            return
+        }
+        API.document.createDocument(title: documentTitle, text: text, image: data) { (documentModel) in
+            callback()
+        }
+    }
+    
+}
+
+protocol CameraViewDelegate {
+    func saveToEnd(text: String, image: UIImage)
+}

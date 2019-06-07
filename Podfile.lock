@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.8.2)
+  - CropViewController (2.5.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - CropViewController
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - CropViewController
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  CropViewController: 6c962d6fb264cc5cb325b622d5029d50c6c43e72
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: f6fe8c2dd027dcf3921cbaa5c3ba39087d71afc9
+PODFILE CHECKSUM: b96216244f78f536ac183bead0158d5fe53e837d
 
 COCOAPODS: 1.5.2

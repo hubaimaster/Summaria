@@ -8,6 +8,7 @@ target 'Summaria' do
   # Pods for Summaria
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON'
+  pod 'CropViewController'
 
   target 'SummariaTests' do
     inherit! :search_paths

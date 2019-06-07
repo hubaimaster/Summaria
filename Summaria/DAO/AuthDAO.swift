@@ -7,13 +7,26 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 
 class AWSIAuthDAO: AuthDAO{
     
+    private func getGuestId()->String?{
+        return UserDefaults.standard.value(forKey: "guest_id") as? String
+    }
+    
+    private func setGuestId(id: String?){
+        UserDefaults.standard.set(id, forKey: "guest_id")
+    }
+    
     func guest(callback: @escaping (Bool) -> Void) {
-        AWSI.instance.auth_guest { (resp) in
+        AWSI.instance.auth_guest(guest_id: getGuestId()) { (resp) in
             if let resp = resp, !resp.keys.contains("error"){
+                let json = JSON(resp)
+                if let id = json["guest_id"].string{
+                    self.setGuestId(id: id)
+                }
                 callback(true)
             }else{
                 callback(false)

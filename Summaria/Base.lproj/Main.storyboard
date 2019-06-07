@@ -105,7 +105,7 @@
         <!--스캔된 문서 목록-->
         <scene sceneID="kqu-5l-YS6">
             <objects>
-                <tableViewController id="zmp-Xh-eWW" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DocumentsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zmp-Xh-eWW" customClass="DocumentsViewController" customModule="Summaria" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xrR-Ab-Df0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,39 +136,27 @@
                                             <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3장" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrV-zs-9fo">
-                                            <rect key="frame" x="253" y="39" width="31" height="20"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UwF-UY-WYE">
+                                            <rect key="frame" x="230" y="11" width="56" height="56"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="Lag-r7-h2B"/>
+                                                <constraint firstAttribute="height" constant="56" id="3uI-ig-fd1"/>
+                                                <constraint firstAttribute="width" constant="56" id="ZWk-QO-UC6"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" red="0.5044921353497801" green="0.80272446065989844" blue="0.31169389477281995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스캔된 문서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bML-4l-sCQ">
-                                            <rect key="frame" x="228" y="16" width="56" height="15"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="15" id="tJQ-3t-oZk"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bML-4l-sCQ" firstAttribute="top" secondItem="UAV-Zq-B7R" secondAttribute="top" constant="16" id="4Uw-BY-rJw"/>
-                                        <constraint firstAttribute="trailing" secondItem="GrV-zs-9fo" secondAttribute="trailing" constant="2" id="6IZ-yg-UfD"/>
                                         <constraint firstItem="K9M-mH-zY5" firstAttribute="top" secondItem="Jtv-Qi-lNA" secondAttribute="bottom" constant="8" id="9N9-fW-U4E"/>
                                         <constraint firstItem="K9M-mH-zY5" firstAttribute="leading" secondItem="UAV-Zq-B7R" secondAttribute="leadingMargin" id="P3P-rZ-p7q"/>
-                                        <constraint firstAttribute="trailing" secondItem="bML-4l-sCQ" secondAttribute="trailing" constant="2" id="mkh-9C-kGr"/>
-                                        <constraint firstItem="GrV-zs-9fo" firstAttribute="top" secondItem="bML-4l-sCQ" secondAttribute="bottom" constant="8" id="tNA-XH-btU"/>
+                                        <constraint firstAttribute="trailing" secondItem="UwF-UY-WYE" secondAttribute="trailing" id="RrA-zg-Beq"/>
+                                        <constraint firstAttribute="bottom" secondItem="UwF-UY-WYE" secondAttribute="bottom" constant="10.5" id="Z06-vD-PYF"/>
                                         <constraint firstItem="Jtv-Qi-lNA" firstAttribute="top" secondItem="UAV-Zq-B7R" secondAttribute="topMargin" constant="5" id="uLB-AR-E5S"/>
+                                        <constraint firstItem="UwF-UY-WYE" firstAttribute="top" secondItem="UAV-Zq-B7R" secondAttribute="top" constant="11" id="xFl-a7-cW7"/>
                                         <constraint firstItem="Jtv-Qi-lNA" firstAttribute="leading" secondItem="UAV-Zq-B7R" secondAttribute="leadingMargin" id="zyO-Jp-XR4"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="countLabel" destination="GrV-zs-9fo" id="bWW-sR-G10"/>
                                     <outlet property="dateLabel" destination="Jtv-Qi-lNA" id="TQD-gT-GrX"/>
+                                    <outlet property="thumbnail" destination="UwF-UY-WYE" id="oex-Ad-L9U"/>
                                     <outlet property="titleLabel" destination="K9M-mH-zY5" id="6sU-of-KgP"/>
                                 </connections>
                             </tableViewCell>
@@ -188,11 +176,11 @@
         <scene sceneID="yY5-ds-UxZ">
             <objects>
                 <navigationController id="Xcx-eo-e4O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="history" id="X1l-7H-O8s">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="X1l-7H-O8s">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I7m-GF-zoA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="I7m-GF-zoA">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -252,11 +240,11 @@
         <scene sceneID="ZiS-rr-97a">
             <objects>
                 <navigationController id="ZUY-7H-8c2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="setting" id="qFN-15-XMk">
+                    <tabBarItem key="tabBarItem" title="" id="qFN-15-XMk">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pI5-8y-dVq">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pI5-8y-dVq">
+                        <rect key="frame" x="0.0" y="20" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -290,7 +278,5 @@
     </scenes>
     <resources>
         <image name="close" width="80" height="80"/>
-        <image name="history" width="32" height="32"/>
-        <image name="setting" width="32" height="32"/>
     </resources>
 </document>

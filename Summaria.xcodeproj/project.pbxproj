@@ -10,19 +10,18 @@
 		2821C7D6F8B1F6CDE6FD9FDD /* Pods_SummariaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */; };
 		827F5F4F22885C26002008BE /* SummaryPreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827F5F4E22885C26002008BE /* SummaryPreView.xib */; };
 		827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F5F5022885C34002008BE /* SummaryPreView.swift */; };
+		8282C57E22A987C90025B508 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8282C57D22A987C90025B508 /* DocumentsViewController.swift */; };
 		C3C8BA73C6961158F340A3C7 /* Pods_SummariaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */; };
 		C974786D9EB306744CC14C33 /* Pods_Summaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */; };
 		E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FAFEF22A4DD7F00AD7515 /* AWSI.swift */; };
 		E51FAFF222A4DE4900AD7515 /* AuthDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */; };
 		E5227117229BA24F003DC8DF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227116229BA24F003DC8DF /* TabbarViewController.swift */; };
 		E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227119229BBA40003DC8DF /* ScannedDocumentCell.swift */; };
-		E522711D229BBAEF003DC8DF /* DocumentSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522711C229BBAEF003DC8DF /* DocumentSetModel.swift */; };
 		E522711F229BBB0E003DC8DF /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E522711E229BBB0E003DC8DF /* DocumentModel.swift */; };
 		E5227121229BBB18003DC8DF /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227120229BBB18003DC8DF /* ModelBase.swift */; };
 		E5227124229BC459003DC8DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227123229BC459003DC8DF /* API.swift */; };
-		E5227126229BC488003DC8DF /* DocumentSetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227125229BC488003DC8DF /* DocumentSetDAO.swift */; };
 		E5227128229BC492003DC8DF /* DocumentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227127229BC492003DC8DF /* DocumentDAO.swift */; };
-		E52E68D42276B7FC00ADCA5A /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = E52E68D32276B7FC00ADCA5A /* tessdata */; };
+		E57EFD6F22A958CC00EB3E8F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57EFD6E22A958CC00EB3E8F /* Secret.swift */; };
 		E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */; };
 		E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */; };
 		E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B4EEEF226448BD0076D0C4 /* Main.storyboard */; };
@@ -59,6 +58,7 @@
 		30CCC2776264AD0089807E60 /* Pods-SummariaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		827F5F4E22885C26002008BE /* SummaryPreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SummaryPreView.xib; sourceTree = "<group>"; };
 		827F5F5022885C34002008BE /* SummaryPreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryPreView.swift; sourceTree = "<group>"; };
+		8282C57D22A987C90025B508 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summaria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A814D847236FB03479F0A165 /* Pods-Summaria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summaria.release.xcconfig"; path = "Pods/Target Support Files/Pods-Summaria/Pods-Summaria.release.xcconfig"; sourceTree = "<group>"; };
 		B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummariaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,13 +69,11 @@
 		E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDAO.swift; sourceTree = "<group>"; };
 		E5227116229BA24F003DC8DF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		E5227119229BBA40003DC8DF /* ScannedDocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedDocumentCell.swift; sourceTree = "<group>"; };
-		E522711C229BBAEF003DC8DF /* DocumentSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSetModel.swift; sourceTree = "<group>"; };
 		E522711E229BBB0E003DC8DF /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
 		E5227120229BBB18003DC8DF /* ModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBase.swift; sourceTree = "<group>"; };
 		E5227123229BC459003DC8DF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		E5227125229BC488003DC8DF /* DocumentSetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSetDAO.swift; sourceTree = "<group>"; };
 		E5227127229BC492003DC8DF /* DocumentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDAO.swift; sourceTree = "<group>"; };
-		E52E68D32276B7FC00ADCA5A /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		E57EFD6E22A958CC00EB3E8F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		E5B4EEE8226448BD0076D0C4 /* Summaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				E5227120229BBB18003DC8DF /* ModelBase.swift */,
-				E522711C229BBAEF003DC8DF /* DocumentSetModel.swift */,
 				E522711E229BBB0E003DC8DF /* DocumentModel.swift */,
 			);
 			path = Model;
@@ -183,9 +180,16 @@
 				E51FAFEF22A4DD7F00AD7515 /* AWSI.swift */,
 				E51FAFF122A4DE4900AD7515 /* AuthDAO.swift */,
 				E5227127229BC492003DC8DF /* DocumentDAO.swift */,
-				E5227125229BC488003DC8DF /* DocumentSetDAO.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		E57EFD6D22A958B600EB3E8F /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				E57EFD6E22A958CC00EB3E8F /* Secret.swift */,
+			);
+			path = Secret;
 			sourceTree = "<group>";
 		};
 		E5B4EEDF226448BD0076D0C4 = {
@@ -213,7 +217,7 @@
 		E5B4EEEA226448BD0076D0C4 /* Summaria */ = {
 			isa = PBXGroup;
 			children = (
-				E52E68D32276B7FC00ADCA5A /* tessdata */,
+				E57EFD6D22A958B600EB3E8F /* Secret */,
 				E5B4EF1A226449DF0076D0C4 /* Config.swift */,
 				E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */,
 				E5227122229BC43A003DC8DF /* DAO */,
@@ -253,6 +257,7 @@
 			children = (
 				E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */,
 				E5227116229BA24F003DC8DF /* TabbarViewController.swift */,
+				8282C57D22A987C90025B508 /* DocumentsViewController.swift */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -384,7 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5B4EEF6226448BE0076D0C4 /* LaunchScreen.storyboard in Resources */,
-				E52E68D42276B7FC00ADCA5A /* tessdata in Resources */,
 				E5B4EEF3226448BE0076D0C4 /* Assets.xcassets in Resources */,
 				827F5F4F22885C26002008BE /* SummaryPreView.xib in Resources */,
 				E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */,
@@ -416,11 +420,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,8 +496,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5227121229BBB18003DC8DF /* ModelBase.swift in Sources */,
+				E57EFD6F22A958CC00EB3E8F /* Secret.swift in Sources */,
 				E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */,
-				E5227126229BC488003DC8DF /* DocumentSetDAO.swift in Sources */,
 				E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */,
 				E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */,
 				E5B4EF2322645A450076D0C4 /* BaseSummary.swift in Sources */,
@@ -504,8 +510,8 @@
 				E5B4EF2522645A9F0076D0C4 /* RuleBasedSummary.swift in Sources */,
 				827F5F5122885C34002008BE /* SummaryPreView.swift in Sources */,
 				E5227117229BA24F003DC8DF /* TabbarViewController.swift in Sources */,
+				8282C57E22A987C90025B508 /* DocumentsViewController.swift in Sources */,
 				E522711F229BBB0E003DC8DF /* DocumentModel.swift in Sources */,
-				E522711D229BBAEF003DC8DF /* DocumentSetModel.swift in Sources */,
 				E5227128229BC492003DC8DF /* DocumentDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

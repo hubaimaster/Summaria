@@ -28,7 +28,7 @@ class AWSI {
     static let instance = AWSI()
     private init(){}
 
-    private let baseUrl = "https://7pak79nkd2.execute-api.ap-northeast-2.amazonaws.com/prod_aws_interface/AGYES2r3ywZAwNkyt4zEzS"
+    private let baseUrl = "https://ri0rhdq9ab.execute-api.ap-northeast-2.amazonaws.com/prod_aws_interface/N4RVz5GjMRmfao2qBSbWwE"
     private var session_id: String?
 
     private func dataToJson(data: Data?)->[String: Any]?{
@@ -261,10 +261,8 @@ class AWSI {
             storage_download_b64(file_id: file_id) { (response) in
                 if let response = response{
                     let stringFileBase64Chunk = response["file_b64"] as! String + stringFileBase64
-                    if response.keys.contains("parent_file_id"){
-                        if let parent_file_id = response["parent_file_id"] as? String{
-                            download(file_id: parent_file_id, stringFileBase64: stringFileBase64Chunk)
-                        }
+                    if let parent_file_id = response["parent_file_id"] as? String{
+                        download(file_id: parent_file_id, stringFileBase64: stringFileBase64Chunk)
                     }else{
                         let data = Data(base64Encoded: stringFileBase64Chunk)
                         callback(data)
@@ -280,9 +278,9 @@ class AWSI {
 
     func storage_upload_file(file_data: Data, file_name: String, read_groups: [String], write_groups: [String], callback: @escaping (_ response: [String: Any]?)->Void){
         let rawBase64String = file_data.base64EncodedString()
-        let stringChunks = rawBase64String.split(by: 1024 * 1024 * 5)
-
+        let stringChunks = rawBase64String.split(by: 1024 * 1024 * 4)
         func upload(count: Int, parent_file_id: String?){
+            print("UPLOAD:\(count)")
             let b64String = stringChunks[count]
             storage_upload_b64(parent_file_id: parent_file_id, file_name: file_name, file_b64: b64String, read_groups: read_groups, write_groups: write_groups) { (response) in
                 if let response = response, response.keys.contains("file_id"), let file_id = response["file_id"] as? String{
@@ -296,6 +294,7 @@ class AWSI {
                 }
             }
         }
+        upload(count: 0, parent_file_id: nil)
     }
 
     func log_create_log(event_source: String, event_name: String, event_param: [String: Any]?, callback: @escaping (_ response: [String: Any]?)->Void){

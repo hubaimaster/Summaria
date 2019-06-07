@@ -18,7 +18,7 @@ class SOCR: OCR {
         guard let image = image.scaleImage(320), let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() else {
             return
         }
-        let apiKey = "AIzaSyB-ItY65dobdKGVRaPv4sG7sUOz7Su4Jq0"
+        let apiKey = API_KEY
         let baseUrl = "https://vision.googleapis.com/v1/images:annotate?key=\(apiKey)"
         let params = ["requests": [
                 "image": ["content": "\(imageBase64)"],

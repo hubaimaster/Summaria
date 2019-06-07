@@ -14,7 +14,6 @@ class API{
     
     static let auth = AWSIAuthDAO()
     static let document = AWSIDocumentDAO()
-    static let documentSet = AWSIDocumentSetDAO()
     
 }
 
@@ -23,14 +22,9 @@ protocol AuthDAO {
     func logout(callback: @escaping (Bool)->Void)
 }
 
-protocol DocumentSetDAO {
-    func getMyDocumentSets(callback: @escaping ([DocumentSetModel]?)->Void)
-    func createDocumentSet(callback: @escaping (DocumentSetModel?)->Void)
-    func addDocument(documentSetId: String, documentId: String, callback: @escaping (Bool)->Void)
-}
-
 protocol DocumentDAO {
+    func getDocuments(callback: @escaping ([DocumentModel]?)->Void)
     func getDocument(id: String, callback: @escaping (DocumentModel?)->Void)
-    func createDocument(title: String, text: String, callback: @escaping (DocumentModel)->Void)
+    func createDocument(title: String, text: String, image: Data, callback: @escaping (String?)->Void)
     func deleteDocument(id: String, callback: @escaping (Bool)->Void)
 }
