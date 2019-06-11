@@ -48,9 +48,10 @@ A service that recognizes documents by a camera and generates summaries.
 
 Please feel free to give us any feedback or feature requests by [opening an issue](https://github.com/hubaimaster/Summaria/issues).
 
+
 ## Contribution
 
-If you wish to contribute to our project, please take a look at the guidelines.
+If you wish to contribute to our project, please please do not hesitate to [contact us](https://github.com/hubaimaster/Summaria/issues).
 
 
 ## Build with
