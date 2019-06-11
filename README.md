@@ -50,7 +50,7 @@ Please feel free to give us any feedback or feature requests by [opening an issu
 
 ## Contribution
 
-If you wish to contribute to our project, please do not hesitate to [contact us](https://github.com/hubaimaster/Summaria/issues)!
+If you wish to contribute to our project, please take a look at the guidelines.
 
 
 ## Build with
