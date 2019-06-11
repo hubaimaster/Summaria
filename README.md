@@ -3,7 +3,7 @@
 
 <p align="right">
   <!-- <a href=""> -->
-    <img alt="Download on the App Store" title="App Store"								src="http://i.imgur.com/0n2zqHD.png" width="140">
+    <img alt="Download on the App Store" title="App Store" src="http://i.imgur.com/0n2zqHD.png" width="140">
   <!-- </a> -->
 </p>
 
@@ -28,8 +28,9 @@ A service that recognizes documents by a camera and generates summaries.
 
 ## Features
 
-- You can select the language of documents to be scanned.
 - The scanned documents can be viewed on the phone.
+- Less affected by the brightness, contrast, and slope of the picture.
+- It is possible to recognize texts which is written in more than 50 different languages.
 
 
 ## Showcase
