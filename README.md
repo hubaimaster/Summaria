@@ -54,8 +54,7 @@ If you wish to contribute to our project, please take a look at the guidelines.<
 
 ## Build with
 
-- [SwiftyTesseract](https://github.com/SwiftyTesseract/SwiftyTesseract) - A Swift wrapper around Tesseract for use in iOS applications
-- [Reductio](https://github.com/fdzsergio/Reductio) - A tool used to extract keywords and phrases using an implementation of the algorithm TextRank.
+- [Vision API](https://cloud.google.com/vision/) - Google Cloud’s Vision API offers powerful pre-trained machine learning models
 
 
 ## Build Process
