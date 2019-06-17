@@ -19,6 +19,7 @@ class API{
 
 protocol AuthDAO {
     func guest(callback: @escaping (Bool)->Void)
+    func facebook(callback: @escaping (Bool)->Void)
     func logout(callback: @escaping (Bool)->Void)
 }
 

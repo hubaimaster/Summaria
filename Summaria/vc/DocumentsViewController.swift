@@ -13,31 +13,42 @@ import UIKit
 class DocumentsViewController: UITableViewController{
     
     static var instance: DocumentsViewController?
-    var models: [Any] = []
+    var models: [ModelBase] = []
     
     func setup(){
+        // 게스트 로그인 후에 도큐먼트 모델을 로드
         API.auth.guest { (success) in
             self.loadDocumentModels()
         }
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (timer) in
-            self.reloadView()
-        })
     }
     
     func loadDocumentModels(){
         API.document.getDocuments { (documents) in
             guard let documents = documents else{
-                self.reloadView()
                 return
             }
-            self.models.removeAll()
             for document in documents{
-                self.setImage(documentModel: document, callback: {
-                    self.models.append(document)
-                    if self.models.count == documents.count{
-                        self.reloadView()
-                    }
-                })
+                self.appendDocument(model: document)
+            }
+        }
+    }
+    
+    func appendDocument(model: DocumentModel){
+        let indexPath = IndexPath(item: models.count, section: 0)
+        if self.models.contains(model) == false{
+            self.models.append(model)
+            DispatchQueue.main.sync {
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
+    
+    func removeDocument(model: DocumentModel){
+        if let item = models.index(of: model){
+           let indexPath = IndexPath(item: item, section: 0)
+            self.models.remove(at: item)
+            DispatchQueue.main.async {
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
         }
     }
@@ -45,30 +56,6 @@ class DocumentsViewController: UITableViewController{
     func reloadView(){
         DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
-    }
-    
-    func setImage(documentModel: DocumentModel, callback: @escaping ()->Void){
-        guard let file_id = documentModel.imageFileId else {
-            documentModel.image = nil
-            callback()
-            return
-        }
-        if let image = Cache.instance.get(key: file_id) as? UIImage{
-            documentModel.image = image
-            callback()
-        }else{
-            AWSI.instance.storage_download_file(_file_id: file_id) { (data) in
-                guard let data = data else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    let image = UIImage(data: data)
-                    Cache.instance.set(key: file_id, object: image)
-                    documentModel.image = image
-                    callback()
-                }
-            }
         }
     }
     
@@ -126,7 +113,7 @@ class DocumentsViewController: UITableViewController{
             alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { (action) in
                 if let id = model.id{
                     API.document.deleteDocument(id: id, callback: { (_) in
-                        self.loadDocumentModels()
+                        self.removeDocument(model: model)
                     })
                 }
             }))

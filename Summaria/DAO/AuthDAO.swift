@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import FBSDKLoginKit
 
 
 class AWSIAuthDAO: AuthDAO{
@@ -32,6 +33,10 @@ class AWSIAuthDAO: AuthDAO{
                 callback(false)
             }
         }
+    }
+    
+    func facebook(callback: @escaping (Bool)->Void) {
+        
     }
     
     func logout(callback: @escaping (Bool) -> Void) {

@@ -240,7 +240,7 @@
         <scene sceneID="ZiS-rr-97a">
             <objects>
                 <navigationController id="ZUY-7H-8c2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="qFN-15-XMk">
+                    <tabBarItem key="tabBarItem" enabled="NO" title="" id="qFN-15-XMk">
                         <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pI5-8y-dVq">

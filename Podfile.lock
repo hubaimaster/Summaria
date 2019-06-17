@@ -1,24 +1,37 @@
 PODS:
   - Alamofire (4.8.2)
   - CropViewController (2.5.0)
+  - FBSDKCoreKit (5.0.0):
+    - FBSDKCoreKit/Basics (= 5.0.0)
+    - FBSDKCoreKit/Core (= 5.0.0)
+  - FBSDKCoreKit/Basics (5.0.0)
+  - FBSDKCoreKit/Core (5.0.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.0.0):
+    - FBSDKCoreKit (= 5.0.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - CropViewController
+  - FBSDKLoginKit
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - CropViewController
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   CropViewController: 6c962d6fb264cc5cb325b622d5029d50c6c43e72
+  FBSDKCoreKit: ba361d4a9d4dc29ff218822b849b22d4f869c7bb
+  FBSDKLoginKit: c6d0dc187bd076e370dffa10f7fc8a3562a6892c
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: b96216244f78f536ac183bead0158d5fe53e837d
+PODFILE CHECKSUM: 6719f8284c2c5101252dcb708cdff9a380b91b77
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.6.1

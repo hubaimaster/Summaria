@@ -9,6 +9,11 @@
 import Foundation
 
 
-class ModelBase {
+class ModelBase: Equatable {
+    var id: String?
+    
+    static func == (lhs: ModelBase, rhs: ModelBase) -> Bool {
+        return lhs.id == rhs.id
+    }
     
 }

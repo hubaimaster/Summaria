@@ -167,7 +167,7 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
     }
     
     func save(text: String, image: UIImage, documentTitle: String, callback: @escaping (()->Void)={}){
-        guard let data = image.pngData() else {
+        guard let data = image.scaleImage(256)?.pngData() else {
             return
         }
         API.document.createDocument(title: documentTitle, text: text, image: data) { (documentModel) in

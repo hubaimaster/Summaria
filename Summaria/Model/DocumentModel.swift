@@ -11,7 +11,6 @@ import SwiftyJSON
 
 
 class DocumentModel: ModelBase{
-    var id: String?
     var title: String?
     var text: String?
     var date: Double?
@@ -19,6 +18,7 @@ class DocumentModel: ModelBase{
     var image: UIImage?
     
     init(item: JSON) {
+        super.init()
         self.id = item["id"].string
         self.title = item["title"].string
         self.text = item["text"].string

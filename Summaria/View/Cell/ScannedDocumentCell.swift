@@ -48,6 +48,7 @@ class ScannedDocumentCell: UITableViewCell {
             setupTitle(model)
             setupCount(model)
             setupThumbnail(model)
+            setImage(model)
         }
     }
     
@@ -72,6 +73,32 @@ class ScannedDocumentCell: UITableViewCell {
         self.thumbnail.layer.masksToBounds = true
         self.thumbnail.contentMode = .scaleAspectFill
         self.thumbnail.image = model.image
+    }
+    
+    func setImage(_ documentModel: DocumentModel){
+        guard let file_id = documentModel.imageFileId else {
+            self.thumbnail.image = nil
+            return
+        }
+        // 성능향상을 위해 캐시
+        if let image = Cache.instance.get(key: file_id) as? UIImage{
+            self.thumbnail.image = image
+        }else{ //없으면 다운로드
+            let start = DispatchTime.now()
+            AWSI.instance.storage_download_file(_file_id: file_id) { (data) in
+                let nanoTime = DispatchTime.now().uptimeNanoseconds - start.uptimeNanoseconds
+                let timeInterval = Double(nanoTime) / 1_000_000_000
+                print("Time: \(timeInterval) s")
+                guard let data = data else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data)
+                    Cache.instance.set(key: file_id, object: image)
+                    self.thumbnail.image = image
+                }
+            }
+        }
     }
     
 }

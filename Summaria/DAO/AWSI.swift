@@ -11,7 +11,7 @@ private class AWSINetworkRequest {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
-
+    
     func post(url: URL, body: NSMutableDictionary, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) throws {
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -20,17 +20,16 @@ private class AWSINetworkRequest {
         request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions.prettyPrinted)
         session.dataTask(with: request, completionHandler: completionHandler).resume()
     }
-
+    
 }
 
 class AWSI {
     
     static let instance = AWSI()
     private init(){}
-
     private let baseUrl = "https://ri0rhdq9ab.execute-api.ap-northeast-2.amazonaws.com/prod_aws_interface/N4RVz5GjMRmfao2qBSbWwE"
     private var session_id: String?
-
+    
     private func dataToJson(data: Data?)->[String: Any]?{
         guard let data = data else {
             return nil
@@ -46,7 +45,7 @@ class AWSI {
             return nil
         }
     }
-
+    
     private func post(params: [String: Any], callback: @escaping (_ response: [String: Any]?, _ error: Error?)->Void){
         let request: AWSINetworkRequest = AWSINetworkRequest()
         if let url: URL = URL(string: baseUrl){
@@ -61,7 +60,7 @@ class AWSI {
             }
         }
     }
-
+    
     private func callAPI(service_type: String, function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         var data = data
         data["module_name"] = "cloud.\(service_type).\(function_name)"
@@ -76,31 +75,31 @@ class AWSI {
             callback(body)
         }
     }
-
+    
     private func auth(function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         callAPI(service_type: "auth", function_name: function_name, data: data, callback: callback)
         self.log_create_log(event_source: "auth", event_name: function_name, event_param: nil) { (_) in }
     }
-
+    
     private func database(function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         callAPI(service_type: "database", function_name: function_name, data: data, callback: callback)
         self.log_create_log(event_source: "auth", event_name: function_name, event_param: nil) { (_) in }
     }
-
+    
     private func storage(function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         callAPI(service_type: "storage", function_name: function_name, data: data, callback: callback)
         self.log_create_log(event_source: "auth", event_name: function_name, event_param: nil) { (_) in }
     }
-
+    
     private func logic(function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         callAPI(service_type: "logic", function_name: function_name, data: data, callback: callback)
         self.log_create_log(event_source: "auth", event_name: function_name, event_param: nil) { (_) in }
     }
-
+    
     private func log(function_name: String, data: [String: Any], callback: @escaping (_ response: [String: Any]?)->Void){
         callAPI(service_type: "log", function_name: function_name, data: data, callback: callback)
     }
-
+    
     func auth_login(email: String, password: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data = [
             "email": email,
@@ -113,7 +112,19 @@ class AWSI {
             callback(response)
         }
     }
-
+    
+    func auth_login_facebook(access_token: String, callback: @escaping (_ response: [String: Any]?)->Void){
+        let data = [
+            "access_token": access_token,
+        ]
+        auth(function_name: "login_facebook", data: data) { (response) in
+            if let json = response, json.keys.contains("session_id"), let session_id = json["session_id"] as? String{
+                self.session_id = session_id
+            }
+            callback(response)
+        }
+    }
+    
     func auth_register(email: String, password: String, extra: [String: Any]?, callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [
             "email": email,
@@ -124,20 +135,20 @@ class AWSI {
         }
         auth(function_name: "register", data: data, callback: callback)
     }
-
+    
     func auth_get_user(user_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "user_id": user_id,
         ]
         auth(function_name: "get_user", data: data, callback: callback)
     }
-
+    
     func auth_logout(callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [:]
         self.session_id = nil
         auth(function_name: "logout", data: data, callback: callback)
     }
-
+    
     func auth_guest(guest_id: String?=nil, callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [:]
         if let guest_id = guest_id{
@@ -150,7 +161,7 @@ class AWSI {
             callback(response)
         }
     }
-
+    
     func database_create_item(item: [String: Any], partition: String, read_groups:[String], write_groups:[String], callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "item": item,
@@ -160,21 +171,21 @@ class AWSI {
         ]
         database(function_name: "create_item", data: data, callback: callback)
     }
-
+    
     func database_delete_item(item_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "item_id": item_id,
         ]
         database(function_name: "delete_item", data: data, callback: callback)
     }
-
+    
     func database_get_item(item_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "item_id": item_id,
         ]
         database(function_name: "get_item", data: data, callback: callback)
     }
-
+    
     func database_get_items(partition: String, start_key: String?=nil, limit: Int=100, callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [
             "partition": partition,
@@ -185,7 +196,7 @@ class AWSI {
         }
         database(function_name: "get_items", data: data, callback: callback)
     }
-
+    
     func database_put_item_field(item_id: String, field_name: String, field_value: Any?, callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [
             "item_id": item_id,
@@ -196,7 +207,7 @@ class AWSI {
         }
         database(function_name: "put_item_field", data: data, callback: callback)
     }
-
+    
     func database_update_item(item_id: String, item: [String: Any], read_groups:[String], write_groups:[String], callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "item_id": item_id,
@@ -206,7 +217,7 @@ class AWSI {
         ]
         database(function_name: "update_item", data: data, callback: callback)
     }
-
+    
     /*
      query = [
      ["and|or", "field", "condition (eq|gt|..)", "value"], ...
@@ -224,21 +235,21 @@ class AWSI {
         }
         database(function_name: "query_items", data: data, callback: callback)
     }
-
+    
     private func storage_delete_b64(file_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "file_id": file_id,
         ]
         storage(function_name: "delete_b64", data: data, callback: callback)
     }
-
+    
     private func storage_download_b64(file_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         let data: [String: Any] = [
             "file_id": file_id,
         ]
         storage(function_name: "download_b64", data: data, callback: callback)
     }
-
+    
     private func storage_upload_b64(parent_file_id: String?, file_name: String, file_b64: String, read_groups:[String], write_groups:[String], callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [
             "file_name": file_name,
@@ -251,15 +262,15 @@ class AWSI {
         }
         storage(function_name: "upload_b64", data: data, callback: callback)
     }
-
+    
     func storage_delete_file(file_id: String, callback: @escaping (_ response: [String: Any]?)->Void){
         storage_delete_b64(file_id: file_id, callback: callback)
     }
-
+    
     func storage_download_file(_file_id: String, callback: @escaping (Data?)->Void){
         func download(file_id: String, stringFileBase64: String){
             storage_download_b64(file_id: file_id) { (response) in
-                if let response = response{
+                if let response = response, response.keys.contains("file_b64"){
                     let stringFileBase64Chunk = response["file_b64"] as! String + stringFileBase64
                     if let parent_file_id = response["parent_file_id"] as? String{
                         download(file_id: parent_file_id, stringFileBase64: stringFileBase64Chunk)
@@ -275,12 +286,12 @@ class AWSI {
         }
         download(file_id: _file_id, stringFileBase64: "")
     }
-
+    
     func storage_upload_file(file_data: Data, file_name: String, read_groups: [String], write_groups: [String], callback: @escaping (_ response: [String: Any]?)->Void){
         let rawBase64String = file_data.base64EncodedString()
-        let stringChunks = rawBase64String.split(by: 1024 * 1024 * 4)
+        let stringChunks = rawBase64String.split(by: 1024 * 1024 * 6)
+        
         func upload(count: Int, parent_file_id: String?){
-            print("UPLOAD:\(count)")
             let b64String = stringChunks[count]
             storage_upload_b64(parent_file_id: parent_file_id, file_name: file_name, file_b64: b64String, read_groups: read_groups, write_groups: write_groups) { (response) in
                 if let response = response, response.keys.contains("file_id"), let file_id = response["file_id"] as? String{
@@ -296,7 +307,7 @@ class AWSI {
         }
         upload(count: 0, parent_file_id: nil)
     }
-
+    
     func log_create_log(event_source: String, event_name: String, event_param: [String: Any]?, callback: @escaping (_ response: [String: Any]?)->Void){
         var data: [String: Any] = [
             "event_source": event_source,
@@ -307,20 +318,20 @@ class AWSI {
         }
         log(function_name: "create_log", data: data, callback: callback)
     }
-
+    
 }
 
 extension String {
     func split(by length: Int) -> [String] {
         var startIndex = self.startIndex
         var results = [Substring]()
-
+        
         while startIndex < self.endIndex {
             let endIndex = self.index(startIndex, offsetBy: length, limitedBy: self.endIndex) ?? self.endIndex
             results.append(self[startIndex..<endIndex])
             startIndex = endIndex
         }
-
+        
         return results.map { String($0) }
     }
 }

@@ -9,6 +9,7 @@ target 'Summaria' do
   pod 'Alamofire', '~> 4.7'
   pod 'SwiftyJSON'
   pod 'CropViewController'
+  pod 'FBSDKLoginKit'
 
   target 'SummariaTests' do
     inherit! :search_paths
