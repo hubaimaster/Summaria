@@ -3,7 +3,7 @@
 
 <p align="right">
   <!-- <a href=""> -->
-    <img alt="Download on the App Store" title="App Store"								src="http://i.imgur.com/0n2zqHD.png" width="140">
+    <img alt="Download on the App Store" title="App Store" src="http://i.imgur.com/0n2zqHD.png" width="140">
   <!-- </a> -->
 </p>
 
@@ -28,8 +28,9 @@ A service that recognizes documents by a camera and generates summaries.
 
 ## Features
 
-- You can select the language of documents to be scanned.
 - The scanned documents can be viewed on the phone.
+- Less affected by the brightness, contrast, and slope of the picture.
+- It is possible to recognize texts which is written in more than 50 different languages.
 
 
 ## Showcase
@@ -47,15 +48,15 @@ A service that recognizes documents by a camera and generates summaries.
 
 Please feel free to give us any feedback or feature requests by [opening an issue](https://github.com/hubaimaster/Summaria/issues).
 
+
 ## Contribution
 
-If you wish to contribute to our project, please take a look at the guidelines.<!--[guidelines](./CONTRIBUTING.md)!-->
+If you wish to contribute to our project, please please do not hesitate to [contact us](https://github.com/hubaimaster/Summaria/issues).
 
 
 ## Build with
 
-- [SwiftyTesseract](https://github.com/SwiftyTesseract/SwiftyTesseract) - A Swift wrapper around Tesseract for use in iOS applications
-- [Reductio](https://github.com/fdzsergio/Reductio) - A tool used to extract keywords and phrases using an implementation of the algorithm TextRank.
+- [Vision API](https://cloud.google.com/vision/) - Google Cloud’s Vision API offers powerful pre-trained machine learning models
 
 
 ## Build Process
@@ -73,7 +74,7 @@ If you wish to contribute to our project, please take a look at the guidelines.<
 
 * **Kim Chang Hwan** - *Front-End Developer* - [hubaimaster](https://github.com/hubaimaster)
 * **Tommy Hansen** - *Back-End Developer* - [Almyk](https://github.com/Almyk)
-* **Park Yeo Hyeon** - *UI/UX Designer* [oinkoinkduck](https://github.com/oinkoinkduck)
+* **Park Yeo Hyeon** - *UI/UX Designer* - [oinkoinkduck](https://github.com/oinkoinkduck)
 * **Kim Min Woo** - *Documentation* - [JoeyValentine](https://github.com/JoeyValentine)
 
 
