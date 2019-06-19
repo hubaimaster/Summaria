@@ -16,7 +16,8 @@ class DocumentModel: ModelBase{
     var date: Double?
     var imageFileId: String?
     var image: UIImage?
-    
+
+//    JSON Object 를 받아와 모델화 시킵니다
     init(item: JSON) {
         super.init()
         self.id = item["id"].string

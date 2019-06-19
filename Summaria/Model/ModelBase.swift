@@ -13,7 +13,11 @@ class ModelBase: Equatable {
     var id: String?
     
     static func == (lhs: ModelBase, rhs: ModelBase) -> Bool {
-        return lhs.id == rhs.id
+        if let lid = lhs.id, let rid = rhs.id{
+            return lid == rid
+        }else{
+            return false
+        }
     }
     
 }
