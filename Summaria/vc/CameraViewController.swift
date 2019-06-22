@@ -130,6 +130,10 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
             alert.addAction(UIAlertAction(title: "저장", style: .default, handler: { (action) in
                 self.saveToEnd(text: text, image: image)
             }))
+            // TODO
+            alert.addAction(UIAlertAction(title: "복사", style: .default, handler: { (action) in
+                self.saveToClipboard(text: text)
+            }))
             alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (action) in
                 
             }))
@@ -173,6 +177,12 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
         API.document.createDocument(title: documentTitle, text: text, image: data) { (documentModel) in
             callback()
         }
+    }
+    
+    func saveToClipboard(text: String) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = text
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
