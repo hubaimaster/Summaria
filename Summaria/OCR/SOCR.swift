@@ -15,7 +15,7 @@ import SwiftyJSON
 class SOCR: OCR {
     
     func getString(image: UIImage, callback: @escaping (String?)->Void){
-        guard let image = image.scaleImage(320), let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() else {
+        guard let image = image.scaleImage(512), let imageBase64 = image.jpegData(compressionQuality: 0.8)?.base64EncodedString() else {
             return
         }
         let apiKey = API_KEY

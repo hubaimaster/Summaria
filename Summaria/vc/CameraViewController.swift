@@ -81,7 +81,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         previewImageView.layer.addSublayer(videoPreviewLayer)
         previewImageView.contentMode = .scaleAspectFill
 
-        DispatchQueue.global(qos: .userInitiated).async { //[weak self] in
+        DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession.startRunning()
             DispatchQueue.main.async {
                 self.videoPreviewLayer.frame = self.previewImageView.bounds
@@ -171,7 +171,7 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
     }
     
     func save(text: String, image: UIImage, documentTitle: String, callback: @escaping (()->Void)={}){
-        guard let data = image.scaleImage(256)?.pngData() else {
+        guard let data = image.scaleImage(128)?.pngData() else {
             return
         }
         API.document.createDocument(title: documentTitle, text: text, image: data) { (documentModel) in
@@ -187,6 +187,12 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
     
 }
 
+// 저장할시에 액션이 정의된 프로토콜
+// 크게 저장하고 닫기
+// 저장
+// 클립보드에 복사 액션이 있음.
 protocol CameraViewDelegate {
     func saveToEnd(text: String, image: UIImage)
+    func save(text: String, image: UIImage, documentTitle: String, callback: @escaping (()->Void)={})
+    func saveToClipboard(text: String)
 }
