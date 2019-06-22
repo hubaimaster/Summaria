@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2821C7D6F8B1F6CDE6FD9FDD /* Pods_SummariaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65CF72F74461685D25AF628 /* Pods_SummariaTests.framework */; };
-		7358E94122BA019F00ED2A2B /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7358E94022BA019F00ED2A2B /* Secret.swift */; };
 		8282C57E22A987C90025B508 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8282C57D22A987C90025B508 /* DocumentsViewController.swift */; };
 		C3C8BA73C6961158F340A3C7 /* Pods_SummariaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */; };
 		C974786D9EB306744CC14C33 /* Pods_Summaria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */; };
@@ -30,6 +29,7 @@
 		E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1A226449DF0076D0C4 /* Config.swift */; };
 		E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1D226458040076D0C4 /* BaseOCR.swift */; };
 		E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1F226458D70076D0C4 /* SOCR.swift */; };
+		FDDAA6BA22BE54D600B304EA /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDAA6B922BE54D600B304EA /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,6 @@
 /* Begin PBXFileReference section */
 		193471F8BBC1AC1D17036051 /* Pods_SummariaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SummariaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CCC2776264AD0089807E60 /* Pods-SummariaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7358E94022BA019F00ED2A2B /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Secret.swift; path = ../../../../Secret.swift; sourceTree = "<group>"; };
 		8282C57D22A987C90025B508 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		A2245DDE94425C4135F1A6AD /* Pods_Summaria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Summaria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A814D847236FB03479F0A165 /* Pods-Summaria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Summaria.release.xcconfig"; path = "Pods/Target Support Files/Pods-Summaria/Pods-Summaria.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		E5B4EF1D226458040076D0C4 /* BaseOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOCR.swift; sourceTree = "<group>"; };
 		E5B4EF1F226458D70076D0C4 /* SOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCR.swift; sourceTree = "<group>"; };
 		F9FF20DC7B6762591D0309D7 /* Pods-SummariaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FDDAA6B922BE54D600B304EA /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +177,7 @@
 		E57EFD6D22A958B600EB3E8F /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				7358E94022BA019F00ED2A2B /* Secret.swift */,
+				FDDAA6B922BE54D600B304EA /* Secret.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -479,12 +479,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5227121229BBB18003DC8DF /* ModelBase.swift in Sources */,
+				FDDAA6BA22BE54D600B304EA /* Secret.swift in Sources */,
 				E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */,
 				E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */,
 				E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */,
 				E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */,
 				E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */,
-				7358E94122BA019F00ED2A2B /* Secret.swift in Sources */,
 				E5227124229BC459003DC8DF /* API.swift in Sources */,
 				E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */,
 				E51FAFF222A4DE4900AD7515 /* AuthDAO.swift in Sources */,
