@@ -19,6 +19,7 @@
 		E5227121229BBB18003DC8DF /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227120229BBB18003DC8DF /* ModelBase.swift */; };
 		E5227124229BC459003DC8DF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227123229BC459003DC8DF /* API.swift */; };
 		E5227128229BC492003DC8DF /* DocumentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5227127229BC492003DC8DF /* DocumentDAO.swift */; };
+		E57EFD7622BF6BCF00EB3E8F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57EFD7522BF6BCF00EB3E8F /* Secret.swift */; };
 		E5B4EEEC226448BD0076D0C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */; };
 		E5B4EEEE226448BD0076D0C4 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */; };
 		E5B4EEF1226448BD0076D0C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5B4EEEF226448BD0076D0C4 /* Main.storyboard */; };
@@ -29,7 +30,6 @@
 		E5B4EF1B226449DF0076D0C4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1A226449DF0076D0C4 /* Config.swift */; };
 		E5B4EF1E226458040076D0C4 /* BaseOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1D226458040076D0C4 /* BaseOCR.swift */; };
 		E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B4EF1F226458D70076D0C4 /* SOCR.swift */; };
-		FDDAA6BA22BE54D600B304EA /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDAA6B922BE54D600B304EA /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +67,7 @@
 		E5227120229BBB18003DC8DF /* ModelBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBase.swift; sourceTree = "<group>"; };
 		E5227123229BC459003DC8DF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		E5227127229BC492003DC8DF /* DocumentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDAO.swift; sourceTree = "<group>"; };
+		E57EFD7522BF6BCF00EB3E8F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		E5B4EEE8226448BD0076D0C4 /* Summaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Summaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5B4EEED226448BD0076D0C4 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		E5B4EF1D226458040076D0C4 /* BaseOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOCR.swift; sourceTree = "<group>"; };
 		E5B4EF1F226458D70076D0C4 /* SOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOCR.swift; sourceTree = "<group>"; };
 		F9FF20DC7B6762591D0309D7 /* Pods-SummariaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SummariaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SummariaUITests/Pods-SummariaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FDDAA6B922BE54D600B304EA /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,10 +174,10 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
-		E57EFD6D22A958B600EB3E8F /* Secret */ = {
+		E57EFD7422BF6BBD00EB3E8F /* Secret */ = {
 			isa = PBXGroup;
 			children = (
-				FDDAA6B922BE54D600B304EA /* Secret.swift */,
+				E57EFD7522BF6BCF00EB3E8F /* Secret.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 		E5B4EEEA226448BD0076D0C4 /* Summaria */ = {
 			isa = PBXGroup;
 			children = (
-				E57EFD6D22A958B600EB3E8F /* Secret */,
+				E57EFD7422BF6BBD00EB3E8F /* Secret */,
 				E5B4EF1A226449DF0076D0C4 /* Config.swift */,
 				E5B4EEEB226448BD0076D0C4 /* AppDelegate.swift */,
 				E5227122229BC43A003DC8DF /* DAO */,
@@ -397,7 +397,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -414,7 +414,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Summaria/Pods-Summaria-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B7C40EA794E00E6F1ED08D9 /* [CP] Check Pods Manifest.lock */ = {
@@ -479,7 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5227121229BBB18003DC8DF /* ModelBase.swift in Sources */,
-				FDDAA6BA22BE54D600B304EA /* Secret.swift in Sources */,
+				E57EFD7622BF6BCF00EB3E8F /* Secret.swift in Sources */,
 				E5B4EF20226458D70076D0C4 /* SOCR.swift in Sources */,
 				E522711A229BBA40003DC8DF /* ScannedDocumentCell.swift in Sources */,
 				E51FAFF022A4DD7F00AD7515 /* AWSI.swift in Sources */,

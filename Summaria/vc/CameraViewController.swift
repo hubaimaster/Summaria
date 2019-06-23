@@ -193,6 +193,5 @@ extension CameraViewController: CropViewControllerDelegate, CameraViewDelegate{
 // 클립보드에 복사 액션이 있음.
 protocol CameraViewDelegate {
     func saveToEnd(text: String, image: UIImage)
-    func save(text: String, image: UIImage, documentTitle: String, callback: @escaping (()->Void)={})
     func saveToClipboard(text: String)
 }
